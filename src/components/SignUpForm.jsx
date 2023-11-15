@@ -43,6 +43,7 @@ export default function SignUpForm({ setToken }) {
         <label>
           Username:
           <input
+            minLength="8"
             value={username}
             onChange={(event) => {
               console.log(event.target.value);

@@ -35,36 +35,47 @@ export default function SignUpForm({ setToken }) {
 
   return (
     <>
-      <h2>Sign Up</h2>
+      <div class="wrapper">
+        <h2>Sign Up</h2>
 
-      {error && <p>{error}</p>}
+        {error && <p>{error}</p>}
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input
-            minLength="8"
-            value={username}
-            onChange={(event) => {
-              console.log(event.target.value);
-              setUsername(event.target.value);
-            }}
-            id="user-name"
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            value={password}
-            onChange={(event) => {
-              setPassword(event.target.value);
-            }}
-            type="password"
-            id="user-password"
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <i class="fa-solid fa-user"></i>
+          <label>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="username"
+                minLength="8"
+                value={username}
+                onChange={(event) => {
+                  console.log(event.target.value);
+                  setUsername(event.target.value);
+                }}
+                id="user-name"
+              />
+            </div>
+          </label>
+          <br />
+          <i class="fa-solid fa-lock"></i>
+          <label>
+            <div class="input-box">
+              <input
+                placeholder="password"
+                value={password}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+                type="password"
+                id="user-password"
+              />
+              <button type="submit">Submit</button>
+            </div>
+          </label>
+          <br />
+        </form>
+      </div>
     </>
   );
 }
